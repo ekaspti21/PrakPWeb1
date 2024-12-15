@@ -1,0 +1,63 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:gainsboro;
+}
+#container{
+    display:flex ;
+}
+#label{
+    margin-left: 20px;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+}
+#inputan{
+    display: flex;
+    padding-left: 30px;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+}
+.JK{
+    display: flex;
+}
+input{
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+}
+select{
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+}
+.button{
+    display: flex;
+    gap: 10px;
+    padding-left: 300px;
+    padding-top: 30px;
+}
+#simpan{
+    background-color: blue;
+    color: white;
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 10px;
+}
+#batal{
+    background-color:orangered;
+    color: white;
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+}
+#simpan:hover{
+    height: 50px;
+    width: 90px;
+}
+#batal:hover{
+    height: 50px;
+    width: 90px;
+}

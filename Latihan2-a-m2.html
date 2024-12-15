@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(224, 231, 229);
+        }
+        input{
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <h1 align="center">Form Kamar</h1>
+        <table align="center">
+            <tr>
+                <td><label for="input">ID Kamar</label></td>
+                <td>
+                    <input type="text" min="1" maxlength="10" size="50" required/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="input">Gambar Ruangan</label></td>
+                <td>
+                    <input type="file" size="50" accept="image/*">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="input">Jenis Kamar</label></td>
+                <td>
+                    <select name="nama Kamar" id="nama Kamar">
+                        <option value="">--Pilih--</option>
+                        <option value="Standar">Standar</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Family">Family</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="input">Harga</label></td>
+                <td><input type="number" style="width: 362px;" placeholder="RP."> IDR</td>
+            </tr>
+            <tr>
+                <td><label for="input">Fasilitas</label></td>
+                <td>
+                    <input type="checkbox" name="Fasilitas" value="AC">AC         
+                    <input type="checkbox" name="Fasilitas" value="Bathup">Bathup         
+                    <input type="checkbox" name="Fasilitas" value="Balkon">Balkon         
+                    <input type="checkbox" name="Fasilitas" value="TV">TV       
+                    <input type="checkbox" name="Fasilitas" value="Balkon">Balkon         
+                    <input type="checkbox" name="Fasilitas" value="WIFI">WIFI   
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div style="display: flex;align-items: center;justify-content: center; gap: 10px;">
+            <input type="button" name="save" value="Simpan" style="background-color: rgb(43, 255, 0); color: white;border-radius: 5px;width: 70px;height: 30px;">
+            <input type="button" name="cancel" value="Batal" style="background-color: rgb(255, 0, 0) ; border-radius: 5px; width: 70px;height: 30px;">
+        </div>
+        <br>
+        
+    </form>
+</body>
+</html>

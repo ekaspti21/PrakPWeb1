@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selamat datang di Best Hotel, tempat terbaik untuk menginap.">
+    <meta name="keywords" content="hotel, penginapan, fasilitas, kolam renang, pusat kebugaran">
+    <title>Cozzy Hotel</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Style untuk header */
+        header {
+            background-color: rgb(180, 134, 8);
+            color: rgb(248, 248, 248);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Membuat ruang antara header dan gambar */
+            align-items: center; /* Menjaga agar gambar dan teks sejajar secara vertikal */
+        }
+
+        /* Style untuk menu navigasi */
+                /* Style untuk menu navigasi */
+        nav {
+            position: relative; /* Mengatur posisi relatif agar z-index bekerja */
+            z-index: 1; /* Pastikan z-index lebih tinggi dari video */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(170, 54, 54);
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: darkgray;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li ul {
+            left: 100%;
+            top: 0;
+        }
+
+
+        /* Style untuk konten utama dan video (sidebar kiri) */
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        .leftbar {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .content {
+            flex: 3;
+            padding: 10px;
+        }
+
+        /* Style untuk footer */
+        footer {
+            background-color: rgb(180, 134, 8);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rasio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: rgb(255, 255, 255);
+            padding: 100px;
+            border-radius: 10px;
+        }
+
+        .video-container iframe {
+        position: absolute;
+            top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px; /* Hanya gunakan border-radius */
+        border: none; /* Hilangkan border jika tidak dibutuhkan */
+        }
+
+        /* Style untuk gambar di header */
+       /* Style untuk konten utama dan gambar */
+       .content {
+            flex: 3;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Menampilkan gambar dalam 3 kolom */
+        }
+
+        .content img {
+            width: 350px;
+            height: 180px;
+            border-radius: 8px; /* Menambahkan sedikit lengkungan pada sudut gambar */
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-warning text-white d-flex justify-content-between align-items-center p-3">
+        <h1 class="m-0">COZZY HOTEL</h1>
+        <img src="media/logoHotel1.png" height="150px" width="150px" alt="Logo Cozy Hotel" class="header-logo">
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cozzy Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kamar</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="fasilitasDropdown" role="button" data-bs-toggle="dropdown">
+                            Fasilitas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Petualangan Alam</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kolam Renang</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Sumber Air Panas</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Kolam Anak & Dewasa</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Reguler</a></li>
+                                            <li><a class="dropdown-item" href="#">Premium</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Pusat Kebugaran</a></li>
+                            <li><a class="dropdown-item" href="#">Ruang Rapat</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pesan Sekarang</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="row">
+            <!-- Left Sidebar: Videos -->
+            <div class="col-md-4">
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/7sQ2EEBT3-s" title="Video YouTube"></iframe>
+                </div>
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/vsyHqfDs9S8" title="Video YouTube"></iframe>
+                </div>
+                <div class="video-container mb-4">
+                    <iframe src="https://www.youtube.com/embed/eZwvLVaayhE" title="Video YouTube"></iframe>
+                </div>
+            </div>
+
+            <!-- Main Content: Photos -->
+            <div class="col-md-8">
+                <div class="content">
+                    <img src="media/Kamar1.jpg" alt="Kamar 1">
+                    <img src="media/Kamar2.jpg" alt="Kamar 2">
+                    <img src="media/Kamar3.jpg" alt="Kamar 3">
+                </div>
+                <div class="content">
+                    <img src="media/Kamar4.jpg" alt="Kamar 4">
+                    <img src="media/Kamar5.jpg" alt="Kamar 5">
+                    <img src="media/Kamar6.jpg" alt="Kamar 6">
+                </div>
+                <div class="content">
+                    <img src="media/Kamar7.jpg" alt="Kamar 7">
+                    <img src="media/Kamar8.jpg" alt="Kamar 8">
+                    <img src="media/Kamar9.jpg" alt="Kamar 9">   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Cozzy Hotel
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

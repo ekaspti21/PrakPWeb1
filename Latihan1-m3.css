@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.form-container {
+    background-color: #e6ecf5;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 360px;
+}
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin: 6px 0 3px;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+input[readonly] {
+    background-color: #eee;
+}
+input[type="checkbox"] {
+    margin-top: 8px;
+}
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.9em;
+}
+.btn-simpan {
+    background-color: #007bff;
+}
+.btn-batal {
+    background-color: #ffbf00;
+    color: #333;
+}
+.harga-container {
+    display: none;
+}
+#show-harga:checked ~ .harga-container {
+    display: block;
+}

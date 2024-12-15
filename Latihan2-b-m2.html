@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fasilitas</title>
+    <style>
+        form{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(228, 242, 251);
+            
+        }
+        input{
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <div>
+            <h1 align="center">Form Fasilitas</h1>
+            <table align="center">
+                <tr>
+                    <td><label for="input">ID</label></td>
+                    <td><input type="text" name="id" min="5" maxlength="10" size="50"required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="input">Nama Fasilitas</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nama Fasilitas" size="50" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="input">Harga Weekend</label></td>
+                    <td>
+                        <input type="number" placeholder="RP." style="width: 362px;" required> IDR
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="input">Harga Weekday</label></td>
+                    <td>
+                        <input type="number" size="50" placeholder="RP." style="width: 362px;" required> IDR
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="input">Kuota</label></td>
+                    <td>
+                        <input type="number" style="width: 362px;" required> Orang
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="input">Jam Buka</label>
+                    </td>
+                    <td>
+                        <input type="time" style="width: 362px;"required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="input">Jam Tutup</label>
+                    </td>
+                    <td>
+                        <input type="time" style="width: 362px;"required>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <div style="display: flex;align-items: center;justify-content: center;gap: 10px;">
+            <input type="button" name="save" value="Simpan" style="background-color: rgb(0, 255, 42);color: white;border: none;border-radius: 5px;width: 70px;height: 30px;">
+            <input type="button" name="cancel" value="Batal" style="background-color: red;border: none;border-radius: 5px;width: 70px;height: 30px;">
+        </div>
+        <br>
+    </form>
+    
+</body>
+</html>

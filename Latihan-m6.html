@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="Latihan.css">
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form>        
+        <h1>Form Pemesanan</h1>
+        <div id="container">
+            <div id="label">
+                <label for="input">Id Pemesanan</label>
+                <label for="input">Nama Pemesan</label>
+                <label for="input">Nomor Identitas</label>
+                <label for="">Jenis Kelamin</label>
+                <label for="input">Tipe Kamar</label>
+                <label for="input">Harga</label>
+                <label for="input">Tanggal Pemesan</label>
+                <label for="input">Durasi Menginap</label>
+                <label for="input">Termasuk Breackfast</label>
+                <label for="input">Total Bayar</label>
+            </div>
+            <div id="inputan">
+                <input type="number" name="Id Pemesanan" min="0" required/>
+                <input type="text" name="Nama" required/>
+                <input type="number" id="Nomor Identitas" min="0" required>
+                <div id="JK">
+                    <input type="radio" name="jeniskelamin"
+                    value="laki-laki" required>laki-laki
+                    <input type="radio" name="jeniskelamin" value="Perempuan" required>Perempuan
+                </div>
+               
+
+                <select name="tipe_kamar" id="Tipe_Kamar">
+                    <option value="">--Pilih--</option>
+                    <option value="Standar">Standar</option>
+                    <option value="Deluxe">Deluxe</option>
+                    <option value="Family">Family</option>
+                </select>
+                <input type="number" min="0" placeholder="RP." id="Harga" readonly>
+                <input type="date" id="Tanggal Pesan">
+                <input type="number" id="durasi" min="0" placeholder="Hari" required/>
+                <div id="makansiang">
+                    <input type="checkbox" style="height: 10px; accent-color:blue;" id="Breackfast"value="ya">Ya
+                </div>
+                <input type="text" id="Totalbayar" placeholder="Rp." readonly>
+            </div>
+        </div>
+        <div class="button">
+            <input type="button" name="save" value="SIMPAN" id="simpan" onclick="Resume()">
+            <input type="button" name="cancel" value="BATAL" id="batal">
+        </div>  
+        <div id="resume">
+        </div>   
+    </form> 
+    
+<script>
+    $(document).ready(function () {
+  // Hitung Total Bayar
+  $('#simpan').on('click', function () {
+    const tipeKamar = $('#Tipe_Kamar').val();
+    const hargaKamar = parseInt($('#Tipe_Kamar option:selected').data('harga')) || 0; // Pastikan data harga ada di option
+    const durasiMenginap = parseInt($('#durasi').val()) || 0;
+    const includeBreakfast = $('#Breackfast').is(':checked');
+
+    if (!tipeKamar || durasiMenginap <= 0) {
+      alert("Pilih tipe kamar dan durasi menginap dengan benar!");
+      return;
+    }
+
+    // Hitung total
+    let totalBayar = hargaKamar * durasiMenginap;
+    if (durasiMenginap > 3) {
+      totalBayar *= 0.9; // Diskon 10%
+    }
+    if (includeBreakfast) {
+      totalBayar += 100000;
+    }
+
+    // Tampilkan total bayar
+    $('#Totalbayar').val(`Rp ${totalBayar.toLocaleString()}`);
+  });
+
+  // Simpan dan tampilkan resume
+  $('#simpan').on('click', function () {
+    const idPemesanan = $('input[name="Id Pemesanan"]').val();
+    const namaPemesan = $('input[name="Nama"]').val();
+    const jenisKelamin = $('input[name="jeniskelamin"]:checked').val();
+    const nomorIdentitas = $('#Nomor\\ Identitas').val();
+    const tanggalPesan = $('#Tanggal\\ Pesan').val();
+    const tipeKamar = $('#Tipe_Kamar').val();
+    const durasiMenginap = $('#durasi').val();
+    const includeBreakfast = $('#Breackfast').is(':checked');
+    const totalBayar = $('#Totalbayar').val();
+
+    alert(`
+      Resume Pemesanan:
+      ID Pemesanan: ${idPemesanan}
+      Nama Pemesan: ${namaPemesan}
+      Nomor Identitas: ${nomorIdentitas}
+      Jenis Kelamin: ${jenisKelamin}
+      Tanggal Pesan: ${tanggalPesan}
+      Tipe Kamar: ${tipeKamar}
+      Durasi Menginap: ${durasiMenginap} hari
+      Termasuk Breakfast: ${includeBreakfast ? "Ya" : "Tidak"}
+      Total Bayar: ${totalBayar}
+    `);
+  });
+});
+  </script>
+</body>
+</html>

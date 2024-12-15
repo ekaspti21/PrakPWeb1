@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <style>
+        input{
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="font-family: 'Times New Roman';">
+        <form method="get" style="background-color: rgb(165, 204, 226);" >
+            <h1 align="center" >Form Pemesanan</h1>
+                <table align="center">
+                        <tr>
+                            <td>
+                                <label for="input" >ID Pemesan
+                            </td>
+                            <td>
+                                <input type="text" name="id" maxlength="10" min="2" size="50" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="input">Nama Pemesan </label>
+                            </td>
+                            <td>
+                                <input type="text"  name="nama" size="50" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="input">Nomor Identitas</label></td>
+                            <td>
+                                <input type="text" name="Nomor Identitas" size="50" maxlength="10" min="5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="input"> Tipe Kamar</label></td>
+                            <td>
+                                <select name="option">
+                                    <option value="">--Pilih--</option>
+                                    <option value="Standar"> Standar</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Family">Family</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="input">Tanggal Pesan</label></td>
+                            <td>
+                                <input type="date" name="Tanggal pesan" style="width: 362px;" pattern="[0]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="input">Durasi Menginap</label>
+                            </td>
+                            <td>
+                                <input type="number" name="Durasi Menginap"
+                                min="1" style="width: 362px;"/>
+                                Hari
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="input">Termasuk Breackfast</label></td>
+                            <td>
+                                <input type="checkbox" name="Breackfast">Ya
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <label for="Input" >Total Bayar</label>
+                        </td>
+                        <td>
+                            <input type="text" name="Total Bayar" id="Total_bayar" size="50">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <div style="display: flex ;align-items: center;justify-content: center; gap: 5px;">
+                    <input type="button" name="save" value="Simpan" id="simpan" style="background-color: rgb(0, 28, 139);color: white; border: none;width: 70px;height: 30px;" >
+                    <input type="button" name="cancel" value="Batal" id="cancel" style="background-color:orange; border: none;width:70px ;height: 30px;">
+                </div>   
+            <br>
+        </form>
+    </div>
+
+    
+</body>
+</html>
